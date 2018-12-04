@@ -1,0 +1,127 @@
+<!doctype html>
+<title>Therapist Questions</title>
+<head>
+                <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+                <link href="css/jumbotron.css" rel="stylesheet">
+                <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+                    <!-- Custom fonts for this template -->
+            <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+            <link href="css/freelancer.css" rel="stylesheet">
+ </head>
+<!--CSS and Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+
+<!-- Firebase -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+<script type ="text/javascript"></script>
+<script src="js/fireBase.js?newversion"></script>
+<script src="js/survey.js?newversion"></script>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" href="home.html">Trainsmart Wellness</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+          
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                        <ul class="navbar-nav mr-auto">
+                          <li class="nav-item">
+                            <a class="nav-link" href="home.html">Home </a>
+                          </li>
+                          <li class="nav-item ">
+                            <a class="nav-link" href="profile.html">Profile</a>
+                          </li>
+                          <li class="nav-item">
+                                  <a class="nav-link" onclick="mainApp.logOut()">Logout</a>
+                                </li>
+                        </ul>
+                         <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="username">
+                        </form>
+                      <button class="btn btn-outline-danger my-2 my-sm-0" type="button" onclick="search()">Search</button>
+                </div>
+              </nav>
+<header class="masthead bg-primary text-white text-center">
+                        <div class="container">
+
+                          <h1 class="text-uppercase mb-0" style="object-fit:cover;">Physical Therapy History</h1>
+                        </div>
+                          <hr class="star-light">
+                          <h2 class="font-weight-light mb-0"></h2>
+                        </div>
+</header>
+
+<section class="portfolio">
+                <div class="container">
+                        <h2 class="text-center text-uppercase text-secondary mb-0">Health Professional Preferences</h2>
+                        <hr class="star-dark mb-5">
+                        <div class="row">
+                              </div>
+          
+                            <div class="form-group">
+                                        <label> <b>1. What is the injury or reason for therapist? </b></label><br>
+                                        <input type="text" id="question1" required><br>
+                            </div>
+                            <div class="form-group">
+                                        <label> <b>2. Have you been treated in the past for the same injury? </b> <select id="question2" required=required>
+                                                        <option value="" disabled selected>Please Select...</option>
+                                                        <option value="yes">Yes</option>
+                                                        <option value="no">No</option>
+                                                        </select>     
+                            </div>
+                            <div class="form-group">
+                                        <label class="info-group"> <b>3. Pain Scale: </b> <select id="question3" required=required><br>
+                                                <option value="" disabled selected>Please Select...</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                </select>
+                            </div>
+                            <div class="form-group">
+                                        <label class="info-group"> <b>4. Describe the Pain:</b> <select id="question4" required=required><br>
+                                                <option value="" disabled selected>Please Select...</option>
+                                                <option value="Dull">Dull</option>
+                                                <option value="Achy">Achy</option>
+                                                <option value="Sharp">Sharp</option>
+                                                <option value="Numb">Numb</option>
+                                                <option value="Throbbing">Throbbing</option>
+                                                <option value="Tension">Tension</option>
+                                                </select>
+                            </div>
+                            <div class="form-group">
+                                        <label class="info-group"> <b>5. Have you seen another therapist?</b> <select id="question5" required=required>
+                                                        <option value="" disabled selected>Please Select...</option>
+                                                        <option value="yes">Yes</option>
+                                                        <option value="no">No</option>
+                                                        </select>
+                            </div>
+                            <div class="form-group">
+                                        <label class="info-group"> <b>6. If so what did you like? What didnt you like?</b></label><br>
+                                        <textarea class="form-control" id="question6" rows="3" required></textarea>
+                
+                            </div>
+
+
+                            <input type=submit onclick="therapistAnswer()" id="bold">  
+                            <div class="text-center mt-4">
+                                    <a class="btn btn-xl btn-outline-dark" href="profile.html">
+                                      <i class="fas fa-pencil mr-2"></i>
+                                Go Back
+                                    </a>
+                     
+         </section>
+</html>
